@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { getFeaturedProjects } from "@/data/projects";
+import { getFeaturedProjects } from "@/sanity/lib/queries";
 import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeading } from "./SectionHeading";
 
-export function FeaturedProjects() {
-  const featured = getFeaturedProjects(4);
+export async function FeaturedProjects() {
+  const featured = await getFeaturedProjects(4);
   return (
     <section className="border-t border-stone-200 bg-white px-5 py-20 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-6xl">

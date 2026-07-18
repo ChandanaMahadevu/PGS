@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { SectionHeading } from "@/components/SectionHeading";
-import { projects } from "@/data/projects";
+import { getAllProjects } from "@/sanity/lib/queries";
 import { siteConfig } from "@/data/site";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getAllProjects();
+
   return (
     <div className="border-b border-stone-200 bg-white">
       <section className="px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
