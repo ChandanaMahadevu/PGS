@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllProjects, getProjectBySlug } from "@/sanity/lib/queries";
+import { getProjectBySlug } from "@/sanity/lib/queries";
 import { siteConfig, whatsappUrl } from "@/data/site";
 
 export const dynamic = "force-dynamic";
@@ -20,11 +20,6 @@ const statusColor: Record<string, string> = {
   completed: "bg-green-100 text-green-800",
   for_sale: "bg-blue-100 text-blue-800",
 };
-
-export async function generateStaticParams() {
-  const projects = await getAllProjects();
-  return projects.map((p) => ({ id: p.slug.current }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
