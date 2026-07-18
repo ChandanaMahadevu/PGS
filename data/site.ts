@@ -3,7 +3,7 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
 /** Replace with your business WhatsApp number in international format, no + or spaces. */
-export const WHATSAPP_PHONE = "15551234567";
+export const WHATSAPP_PHONE = "919901997772";
 
 export function whatsappUrl(text?: string): string {
   const base = `https://wa.me/${WHATSAPP_PHONE}`;
@@ -12,8 +12,8 @@ export function whatsappUrl(text?: string): string {
 }
 
 export const siteConfig = {
-  name: "PGS Build & Brick",
+  name: "PGS Group",
   tagline: "Premium homes. Honest materials.",
   description:
-    "We design and build refined residential projects and supply premium red soil bricks—crafted for strength, beauty, and lasting value.",
+    "We design and build refined residential projects, supply premium red soil bricks, and deliver end-to-end interior solutions—crafted for strength, beauty, and lasting value.",
 } as const;
