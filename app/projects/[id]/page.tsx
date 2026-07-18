@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getAllProjects, getProjectBySlug } from "@/sanity/lib/queries";
 import { siteConfig, whatsappUrl } from "@/data/site";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ id: string }> };
 

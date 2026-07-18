@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { getAllProjects } from "@/sanity/lib/queries";
 import { siteConfig } from "@/data/site";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Projects",
