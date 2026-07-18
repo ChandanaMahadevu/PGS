@@ -29,7 +29,7 @@ const PROJECT_FIELDS = `
   plotSize,
   houseSize,
   price,
-  photos[]{ caption, asset->{ url } },
+  photos[]{ caption, asset->{ url } }[asset != null],
   videoUrl,
   order
 `;
